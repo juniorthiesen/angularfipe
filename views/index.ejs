@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+  <body>
+
+  	<section ng-controller="CarrosController">
+
+	    <h1>Salvar contatos</h1>
+	    <form class="form-inline" ng-submit='adicionaVeiculo()'>
+	    	<div class="form-group">  	
+	    		<input type='text' placeholder='Marca' class="form-control" ng-model='veiculo.marca'/>
+	    	</div>
+	    	<div class="form-group">
+	    		<input type='tel' placeholder='Modelo' class="form-control" ng-model='veiculo.modelo'/>
+	    	</div>
+	    	<div class="form-group">
+	    		<input type='tel' placeholder='Ano' class="form-control" ng-model='veiculo.ano'/>
+	    	</div>
+	    	<div class="form-group">
+	    		<input type='tel' placeholder='Preço' class="form-control" ng-model='veiculo.preco'/>
+	    	</div>
+	    	<div class="form-group">
+	    		<input type='tel' placeholder='FIPE' class="form-control" ng-model='veiculo.fipe_codigo'/>
+	    	</div>
+	    		<button type='submit' class='btn btn-primary'>Salvar</button>
+	    </form>
+
+	    <h1>Contatos</h1>
+	    <table class="table table-striped">
+	    	<tr>
+	    		<th>Marca</th>
+	    		<th>Modelo</th>
+	    		<th>Ano</th>
+	    		<th>Preço</th>
+	    		<th>FIPE</th>
+	    	</tr>
+	    	<tr ng-repeat='veiculo in veiculos'>
+	    		<td>{{veiculo.marca}}</td>
+	    		<td>{{veiculo.modelo}}</td>
+	    		<td>{{veiculo.ano}}</td>
+	    		<td>{{veiculo.preco}}</td>
+	    		<td>{{veiculo.fipe_codigo}}</td>
+	    	</tr>
+	    </table>
+
+	</section>
+
+	<script src="/js/angular.js"></script>
+	<script src="/js/CarrosController.js"></script>
+  </body>
+</html>
